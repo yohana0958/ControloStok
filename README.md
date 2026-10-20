@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ControloStok — Controle de Estoque de Autopeças
 
-## Getting Started
+Aplicação web para cadastro de autopeças, acompanhamento de estoque, registro de entradas e saídas e histórico de movimentações com usuário responsável e data.
 
-First, run the development server:
+## Tecnologias
+- Next.js e React
+- TypeScript
+- Prisma ORM
+- MySQL
+- Tailwind CSS e SweetAlert2
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Configuração local
+1. Instale Node.js compatível com o Next.js do projeto e MySQL.
+2. Crie o banco de dados `saep_db), ou execute o script `prisma/saep_db.sql` em um ambiente de avaliação limpo.
+3. Configure a variável `DATABASE_URL` no arquivo `.env`, apontando para o banco `saep_db`.
+4. Instale as dependências com `npm install`.
+5. Gere o Prisma Client com `npx prisma generate`.
+6. Para aplicar as migrations existentes em um banco já configurado, use `npx prisma migrate deploy`.
+7. Inicie o projeto com `npm run dev` e acesse `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Não execute o script SQL de criação sobre um banco de produção com dados que precisam ser preservados. Os usuários de demonstração do script usam senhas simples apenas para avaliação local; não reutilize essas credenciais em produção.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura de entregáveis SAEP
+- `docs/requisitos-funcionais.md`: requisitos funcionais e regras de negócio.
+- `docs/requisitos-infraestrutura.md`: requisitos de infraestrutura.
+- `docs/casos-de-teste.md`: plano de testes.
+- `docs/modelo-relacional.md`: descrição textual do DER.
+- `docs/der.mmd`: fonte Mermaid editável do DER.
+- `prisma/saep_db.sql`: criação e população do banco de dados de demonstração.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Observação
+Confirme as versões reais de Node.js, MySQL e sistema operacional no computador da avaliação. Execute os casos de teste e registre seus resultados antes da entrega final.
